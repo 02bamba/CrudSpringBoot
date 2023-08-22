@@ -1,8 +1,6 @@
 package com.example.produit.Service;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.produit.Model.Produit;
@@ -11,7 +9,6 @@ import com.example.produit.Repository.ProduitRepository;
 @Service
 public class ProduitService {
     private final ProduitRepository produitRepository;
-    @Autowired
     public ProduitService(ProduitRepository produitRepository) {
         this.produitRepository = produitRepository;
     }
@@ -23,5 +20,8 @@ public class ProduitService {
         return produitRepository.save(produit);
     }
     
+    public Produit FindProduitById(Long id){
+        return produitRepository.FindProduitById(id);
+    } 
 
 }
